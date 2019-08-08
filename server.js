@@ -1,12 +1,13 @@
 const express = require("express");
-const app = express();
-const port = process.env.PORT || 9000;
 const cors = require("cors");
 const axios = require("axios");
 var morgan = require("morgan");
 
+const app = express();
+const port = process.env.PORT || 9000;
+
 const getBreweryData = async (queryString, pageNum) => {
-  var brewerySearchURL = `https://api.openbrewerydb.org/breweries?page=${pageNum}&per_page=6/search?query=${queryString}`;
+  var brewerySearchURL = `https://api.openbrewerydb.org/breweries/search?query=${queryString}`;
   try {
     const response = await axios.get(brewerySearchURL);
     return response.data;
