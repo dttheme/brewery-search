@@ -1,4 +1,4 @@
-# Brewery Search
+# S.O.S. (Search Out Suds)
 
 Search your favorite breweries!
 
@@ -12,24 +12,19 @@ npm install
 npm start
 ```
 
-## Usage
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
 ## Built With
 
 [Open Brewery API](https://www.openbrewerydb.org/)
+
+- React
+- Express
+- SCSS
 
 ## Future Features
 
 - Pagination
 - Results per page options
+- A seperate list of favorited breweries
 
 ## License
 

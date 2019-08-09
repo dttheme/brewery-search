@@ -6,8 +6,8 @@ var morgan = require("morgan");
 const app = express();
 const port = process.env.PORT || 9000;
 
-const getBreweryData = async (queryString, pageNum) => {
-  var brewerySearchURL = `https://api.openbrewerydb.org/breweries/search?query=${queryString}`;
+const getBreweryData = async queryString => {
+  var brewerySearchURL = `https://api.openbrewerydb.org/breweries/search?query=${queryString}&per_page=12`;
   try {
     const response = await axios.get(brewerySearchURL);
     return response.data;
@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   res.send({ express: "Your Express backend is connected to React" });
 });
 app.get("/breweries", async (req, res) => {
-  const response = await getBreweryData(req.query.query, req.query.pageNum);
+  const response = await getBreweryData(req.query.query);
   res.send(response);
 });
 
